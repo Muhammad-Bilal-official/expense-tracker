@@ -1,11 +1,15 @@
 import './ExpenseItem.css';
 function ExpenseItem() {
-  return (
+  const expenseDate = new Date(2021,2,28);
+  const expenseTitle = 'Car insurance';
+  const expenseAmount = 294.67;
+
+  return (  
     <div className='expense-item'>
-      <div >March 28th 2021</div>
+      <div >{expenseDate.toISOString()}</div> // To convert Date into String otherwise react gives an error.
       <div className='expense-item__description'>
-        <h1>Car Insurance</h1>
-        <div className='expense-item__price'>$294.67</div>
+        <h1>{expenseTitle}</h1>
+        <div className='expense-item__price'>${expenseAmount}</div>
       </div>
     </div>
   );
