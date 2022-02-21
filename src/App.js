@@ -25,8 +25,6 @@ function App() {
 
   return (
     <div>
-      <h1>Start In the Name of Allah!</h1>
-      <h2>ALhamdulillah I Have Started React Successfully</h2>
       <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
