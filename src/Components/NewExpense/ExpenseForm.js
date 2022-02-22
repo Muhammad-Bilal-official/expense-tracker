@@ -24,6 +24,11 @@ export default function ExpenseForm(props) {
       date: new Date(enteredDate)
     };
     console.log(expenseData); //Temporarily printing the submitted data
+
+    // Reseting the Form 
+    setEnteredTitle('');
+    setEnteredAmount('');
+    setEnteredDate('');
   };
   return (
     <form className="new-expense" onSubmit={submitFormHandler}>
@@ -31,6 +36,7 @@ export default function ExpenseForm(props) {
         <div className="new-expense__control">
           <label htmlFor="title">Title</label>
           <input
+            value={enteredTitle}
             type="text"
             name="title"
             id="title"
@@ -41,6 +47,7 @@ export default function ExpenseForm(props) {
         <div className="new-expense__control">
           <label htmlFor="amount">Amount</label>
           <input
+            value={enteredAmount}
             type="number"
             min="0.1"
             step="0.1"
@@ -53,6 +60,7 @@ export default function ExpenseForm(props) {
         <div className="new-expense__control">
           <label htmlFor="date">Date</label>
           <input
+            value={enteredDate}
             type="date"
             name="date"
             id="date"
