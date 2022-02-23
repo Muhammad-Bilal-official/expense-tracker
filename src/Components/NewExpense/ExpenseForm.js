@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
-export default function ExpenseForm(props) {
+
+const ExpenseForm = (props) =>{
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -23,13 +24,20 @@ export default function ExpenseForm(props) {
       amount: enteredAmount,
       date: new Date(enteredDate)
     };
-    console.log(expenseData); //Temporarily printing the submitted data
+    console.log(expenseData);
+     //Temporarily printing the submitted data
 
+    //  props.onSaveNewExpenseData(expenseData);
+    console.log(props.onSaveExpenseData);
+    props.onSaveExpenseData(expenseData);
+     
     // Reseting the Form 
     setEnteredTitle('');
     setEnteredAmount('');
     setEnteredDate('');
   };
+  console.log(props.onSaveExpenseData);
+
   return (
     <form className="new-expense" onSubmit={submitFormHandler}>
       <div className="new-expense__controls">
@@ -77,3 +85,5 @@ export default function ExpenseForm(props) {
     </form>
   );
 }
+
+export default ExpenseForm;
